@@ -5,6 +5,45 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Week 1 | Demo</title>
+
+    <!--in document CSS below-->
+    <style type="text/css">
+
+/*inside of the -style- you must write in CSS*/
+
+/* there ar three ways to select elemnets to -style-
+/*BY ELEMENT (TAG) TYPE*/
+
+body{
+
+     background-color: grey;
+     color: white; /*FONT color*/
+     background-image 
+}
+
+h2 {
+
+     font-family:'Franklin Gothic medium' , 'Arial Narrow' ,
+     Arial, sans-serif;
+}
+
+
+p {
+     font-size:16pt;
+}
+
+/*style by CLASS -- a collection of elements that have the same class="" value*/
+.group {
+
+     color :rgb(0, 0, 0);
+}
+
+/*style a specific element by ID */
+#batmobile {
+
+     border:5px solid #ffffff;/*hexadecimal color*/
+}
+</style>
 </head>
 <body>
     <!--This is how you write HTML comments-->
@@ -12,8 +51,8 @@
      <!--BLOCK LEVEL ELEMENT: create page structure, always start on new lines, and span the width with of the entire page-->
 
 <!--Heading Tags (there are 6)-->
-<h1>Heading 1</h1><!--biggest! only ONE h1 per page allowed!-->
-<h2>Heading 2</h2>
+<h1 style="boarder:lpx solid red;"> Heading 1</h1><!--biggest! only ONE h1 per page allowed!-->
+<h2 style=" boarder: 1px solid ornage;">Heading 2</h2>
 <h3>Heading 3</h3>
 <h4>Heading 4</h4>
 <h5>Heading 5</h5>
@@ -44,9 +83,35 @@ screen readers-->
 <!--unordered lists are bulleted-->
 <u1>
      <li>Cowboy Beebop</li>
-     <li> Naruto Shippuden</li>
+     <li class="group"> Naruto Shippuden</li>
      <li> Black Butler</li>
 </u1>
+
+<!--paragraph tag: also a block level element-->
+
+<p>Wafer cupcake soufflé. Ice cream marzipan macaroon. 
+     Cotton candy jelly pastry jelly-o donut. Lemon drops 
+     cake chupa chups tart biscuit chupa chups croissant brownie. 
+     Dragée macaroon croissant macaroon croissant muffin wafer macaroon jelly. 
+     Sweet roll jujubes wafer chupa chups pastry. <span id= "orang"> Chupa chups</span> tootsie roll tart macaroon 
+     soufflé fruitcake tiramisu. Cotton candy icing biscuit bear claw chocolate jelly pudding.</p>
+    
+     <!--breakspace-->
+     <br>
+     <br>
+ 
+ 
+ 
+     <!--IN LINE TAGS-->
+     <!---->
+ 
+     <p class="group">We can make text bold usimg this bold tag.</p>
+     <p>We can make text italic using the italic tag.</p>
+     <p>we can make text <u>underline</u> using the underline tag.</p>
+ 
+     <!--special CEO inline tags-->
+     <p class="group"> we can also make text <strong>bold</strong> using the strong tag.</p>
+     <p>we can also make text <em>italicized</em></p>
 
 </body>
 </html>
