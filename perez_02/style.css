@@ -1,0 +1,32 @@
+body {
+
+    Background-color: red;
+    font-size: 20px;
+    font-size:green;
+}
+
+#container {
+
+    width:970px;
+    padding: 60px;
+    text-align:center;
+}   
+
+h1 {
+
+    width:950px;
+    padding: 10px;
+    text-align:center;
+    background-color:blue;
+    border: white;
+}
+
+#sections {
+
+    width: 950px;
+    padding: 10px;
+    background-color:blue;
+    
+}
+
+   
