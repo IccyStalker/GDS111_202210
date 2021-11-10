@@ -17,6 +17,19 @@ pics2[0] = "images/rock2.jpg"
 pics2[1] = "images/paper2.jpg"
 pics2[2] = "images/scissors2.jpg"
 
+//creat array holding the buttoon elements
+//document.querySelectorAll grabs all of one element type
+var btn = document.querySelectorAll("button")
+
+//check your stored data in the console!
+console.log(btn) //used for testing, requires the dev tools
+
+//make the buttons clickable and runnable ALSO for the game
+//add event listeners to each button
+btn[0].addEventListener("click", function (e) { play(0) })
+btn[1].addEventListener("click", function (e) { play(1) })
+btn[2].addEventListener("click", function (e) { play(2) })
+
 //arrays that stor the player & computer options (one array for each)
 //Player ID - pId
 var pId = new Array("rock_p", "paper_p", "scissors_p")
@@ -36,6 +49,8 @@ function swap(id, image) {
 function play(id) {
 
     //setting up the stored image paths (src) in JS to match the HTML ones
+    //swap() CALLS the function --> this gets its code to run!
+    //values supplied inside of () 
     swap(pId[0], pics[0])
     swap(pId[1], pics[1])
     swap(pId[2], pics[2])
@@ -61,12 +76,13 @@ function play(id) {
 
         //0 is ROCK
         case 0://case for when p_choice == 0
-        
-
-             if(c_choice == 0) {//comp is scissors
+            if(c_choice == 0) {//comp is scissors
 
                //alert the user that there has been a draw
                alert("Bloody hell let's call it a DRAW!")
+
+               //callshowResults() and pass correct values for: pChoice, cChoice, Results
+               showResults("Rock!", "Rock!", "its a DRAW XD")
            }
            else if (c_choice == 1) {//comp is rock
 
@@ -115,5 +131,14 @@ function play(id) {
         }//end switch statement
 
 
-    }
+
+ }//play() CLOSE
+
+ function showResults(pChoice, cChoice, results) {
+
+    document.getElementById("pChoice").innerHTML = pChoice
+    document.getElementById("cChoice").innerHTML = cChoice
+    document.getElementById("results").innerHTML = results
+
+ }
 
