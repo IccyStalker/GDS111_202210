@@ -79,7 +79,7 @@ function play(id) {
             if(c_choice == 0) {//comp is scissors
 
                //alert the user that there has been a draw
-               alert("Bloody hell let's call it a DRAW!")
+               alert("Both Killers DRAW!")
 
                //callshowResults() and pass correct values for: pChoice, cChoice, Results
                showResults("Rock!", "Rock!", "its a DRAW XD")
@@ -90,7 +90,7 @@ function play(id) {
            }
            else {//comp is paper
 
-               alert("You WIN with your SCISSORS!")
+               alert("You Win with Jason!")
            }
            break
            //1 is PAPER
@@ -99,7 +99,7 @@ function play(id) {
             if(c_choice == 1) {//comp is scissors
 
                //alert the user that there has been a draw
-               alert("Bloody hell let's call it a DRAW!")
+               alert("Both Killers DRAW!")
            }
            else if (c_choice == 2) {//comp is rock
 
@@ -107,7 +107,7 @@ function play(id) {
            }
            else {//comp is paper
 
-               alert("You WIN with your SCISSORS!")
+               alert("You WIN with Jason!")
            }
            break
            //2 is SCISSORS
@@ -116,7 +116,7 @@ function play(id) {
              if(c_choice == 2) {//comp is scissors
 
                 //alert the user that there has been a draw
-                alert("Bloody hell let's call it a DRAW!")
+                alert("Both killers DRAW!")
             }
             else if (c_choice == 0) {//comp is rock
 
@@ -124,7 +124,7 @@ function play(id) {
             }
             else {//comp is paper
 
-                alert("You WIN with your SCISSORS!")
+                alert("You WIN with Jason!")
             }
             break
 

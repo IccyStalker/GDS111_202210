@@ -103,7 +103,7 @@ div {
     position:absolute;
     width:300px;
     height:300px;
-    background-color:rgb(250, 29, 0);
+    background-color:rgb(250, 29,0 );
     margin-left:680px;
     margin-right:10px;
     /*border: 5px solid purple;*/

@@ -19,8 +19,6 @@ div {
     padding:10px;
 }
 
-
-
 footer {
     text-align:center;
     color:red;
@@ -29,6 +27,41 @@ footer {
 header {
     text-align:center;
 }
+
+.btn {                      
+    border:1px solid blue;
+    width:70px;
+    height:40px;
+    margin-left:800px;
+    padding:10px;
+}
+
+
+.reload {
+    
+    color:red;
+    background-color:black;
+    }
+
+
+.shoot{
+    position:fixed;
+    color:red;
+    background-color:black;
+}
+
+
+
+
+  
+
+
+
+
+
+
+
+
 
 
 

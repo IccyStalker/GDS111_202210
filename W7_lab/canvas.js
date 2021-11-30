@@ -14,7 +14,7 @@ galaxy.src = "images/galaxy.jpeg" //we can access .src because galaxy is an imag
 //now, "write" the image to the canvas page! an event must occur for this to happen...
 galaxy.onload = function() {
 
-    //DRAWING AN IMAGE TO THE CANVAS
+    //DRAWING AN IMAGE TO THE CANVAS 
     //context.drawImage(imageObject, x, y, width, hieght)
     ctx.drawImage(galaxy, 0, 0, 800, 600)
 

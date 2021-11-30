@@ -1,4 +1,5 @@
 body{
+    background-color:purple;
     display:flex;
     justify-content:center;
 }
@@ -9,11 +10,11 @@ nav{
 #container{
     box-sizing:border-box;
     width:1018px;
-    border:1px solid black;
+    border:1px solid red;
     padding:7px;
 }
 canvas{
-    border: 1px solid black;
+    border: 1px solid red;
     box-sizing:border-box;
 }
 a:link, a:visited{
@@ -24,8 +25,43 @@ a:link, a:visited{
 }
 
 h2 {
+    color:red;
+    background-color:black;
+    Width:100px;
+    height:40px;
+    font-size:20px;
+    font-style: oblique;
+    text-align:center;
+    margin-left:450px;
+    
+   
+}
+
+#result {
+    color:red;
+    background-color:black;
+    width:108px;
+    font-size:20px;
+    font-style:oblique;
+    text-align:center;
     
 }
+
+.player {
+    text-align: center;
+    
+}
+
+.computer {
+    text-align: center;
+}
+
+
+
+
+
+
+    
 
 
 
