@@ -7,15 +7,15 @@ var pics = new Array() //creates an empty array
 
 //assign values to array -- "population"
 //[#] denotes index --> it's like a house number and array is the street name; array name + index gives access to the indiv value
-pics[0] = "images/rock.jpg"
-pics[1] = "images/paper.jpg"
-pics[2] = "images/scissors.jpg"
+pics[0] = "images/download (1).jpg"
+pics[1] = "images/Michael Myers (1).jpg"
+pics[2] = "images/Jason Voorhees (1).jpg"
 
 var pics2 = new Array()
 
-pics2[0] = "images/rock2.jpg"
-pics2[1] = "images/paper2.jpg"
-pics2[2] = "images/scissors2.jpg"
+pics2[0] = "images/download (1).jpg"
+pics2[1] = "images/Michael Myers (1).jpg"
+pics2[2] = "images/Jason Voorhees (1).jpg"
 
 //creat array holding the buttoon elements
 //document.querySelectorAll grabs all of one element type
