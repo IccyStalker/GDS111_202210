@@ -70,12 +70,41 @@ function animate() {
     ship.move()
     ship.draw()
 
+    //if ship leaves top edge of canvas returns, at left egde
     if(ship.x > canvas.width() + 25) {
         //if the current ship x coord is greater than (beyond) the canvas width + 25 (size of the ship)
 
         //move ship x coord t
         ship.x = -25
+    }
+
+     //if ship leaves bottom edge of canvas returns, at top egde
+     if(ship.y >canvas.height() + 25) {
+        //if the current ship x coord is greater than (beyond) the canvas width + 25 (size of the ship)
+
+        //move ship x coord t
+        ship.y = -25
 
     }
+
+      //if ship leaves left edge of canvas, returns at right egde
+      if(ship.x < 0 - 25) {//0 is the x coord of left margin 25 is the length of the ship
+         //if the current ship x coord is greater than (beyond) the canvas width + 25 (size of the ship)
+
+         //move ship x coord t
+         ship.x = 825//800 is the x coordof the bottom canvas margin
+    }
+
+    //if ship leaves right edge of canvas returns at left edge
+    if(ship.y < 0 - 25) {//0 is the x coord of left margin 25 is the length of the ship
+        //if the current ship x coord is greater than (beyond) the canvas width + 25 (size of the ship)
+
+        //move ship x coord t
+        ship.y = 825 //800 is the x coordof the bottom canvas margin
+
+    }
+
+
+     
 
 }//close of animate() 

@@ -25,7 +25,11 @@ function Ship() {
 
       }//ship.move()
 
-      this.draw = function() {
+       this.draw = function() {
+
+        /*
+        DRAWING THE SHIP TO THE CANVAS (TRIANGLE)
+        -----------------------------------------
 
         //save the current state of the canvas
         context.save()
@@ -50,8 +54,27 @@ function Ship() {
         context.fill()
         context.restore()
 
+        */
+
+        //IMAGE AS THE SHIP (x-wing)
+
+        var imageObj = new Image()
+        imageObj.src = "images/xwing.png" //PNG FOR TRANSPARENCY!
+
+        //save the current state of the canvas
+        context.save()
+
+        //move the piont of origin 0,0 to the ships starting x and y coords
+        context.translate(this.x, this.y)
+
+        //draw the image to the canvas context
+        //drawImage(image, x coord of top left corner, y coord of the top left corner, width of image height of image)
+        
+        context.drawIamge(imageObj, -100, -50, -200, 100)
+        context.restore()
+
 
 
     }//ship.draw()
 
-}//ship()
+  }//ship()
