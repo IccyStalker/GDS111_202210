@@ -278,3 +278,5 @@ scoreTimer();
 function detectCollision(distance, calcDistance){
     return distance < calcDistance
 }
+
+//look its me time to push 
