@@ -8,8 +8,8 @@ var c = document.querySelector('canvas') //grabs element type instead of ID
 var context = c.getContext("2d")
 var timer = requestAnimationFrame(main)
 var gravity = 1
-var astreriod = new Array()
-var numAstreriods = 10
+var astreroid = new Array()
+var numAstreroids = 10
 var gameOver = false
 var score = 0
 
@@ -163,7 +163,7 @@ function keyPressDown(e) {
         ship.up = true;
     }
      //not coding for down because ship don't go that way 
-
+     
      function keyPressUp(e) {
 
         //console.log("key Down" + e.keycode) //tells you the keycodes!
@@ -178,7 +178,7 @@ function keyPressDown(e) {
         if(e.keyCode === 39) {
             ship.up = false;
         }
-         //not coding for down because ship don't go that way
+    }    //not coding for down because ship don't go that way
 
 
 }//keyPressUp() CLOSE
@@ -278,5 +278,3 @@ scoreTimer();
 function detectCollision(distance, calcDistance){
     return distance < calcDistance
 }
-
-//look its me time to push 
