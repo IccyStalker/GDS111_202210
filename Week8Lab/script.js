@@ -59,6 +59,7 @@ function PlayerShip(){
     this.left = false;
     this.right = false;
     this.flamelength = 30;
+    
 
     this.draw = function(){
         context.save();
