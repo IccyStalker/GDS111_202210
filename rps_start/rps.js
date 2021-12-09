@@ -45,6 +45,13 @@ function swap(id, image) {
 
 }
 
+function swap(id, image) {
+
+    //access the image elements by ID from the HTML document
+    document.getElementById(id).src = image
+
+}//swap() CLOSE
+
 //play function
 function play(id) {
 
@@ -142,3 +149,4 @@ function play(id) {
 
  }
 
+ 
