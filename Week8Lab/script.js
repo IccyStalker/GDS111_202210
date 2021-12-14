@@ -60,11 +60,12 @@ function PlayerShip(){
     this.right = false;
     this.flamelength = 30;
     
+    
 
     this.draw = function(){
         context.save();
         context.translate(this.x, this.y);
-        //this drws the flame behind the ship
+        //this draws the flame behind the ship
         if(this.up == true){
             context.save();
             //adjust the flame length for a flicker effect
@@ -74,7 +75,7 @@ function PlayerShip(){
             else{
                 this.flamelength = 30;
             }
-            context.fillStyle = "orange";
+            context.fillStyle = "red";
             context.beginPath();
             context.moveTo(0, this.flamelength);
             context.lineTo(5, 5);
@@ -86,7 +87,7 @@ function PlayerShip(){
         }
         context.beginPath();
         
-        context.fillStyle = "red";
+        context.fillStyle = "green";
         context.moveTo(0, -13);
         context.lineTo(10, 10);
         context.lineTo(-10, 10);
