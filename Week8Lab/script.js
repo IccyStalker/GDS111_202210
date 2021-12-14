@@ -7,9 +7,22 @@ var numAsteroids = 10;
 var gameOver = true;
 var score = 0;
 
+var shipSprite = new Image()
+shipSprite.src = "images/gh.jpg" 
+shipSprite.onload = function(){
+
+
+}
+
+var asteroidSprite = new Image()
+asteroidSprite.src = "images/gh.jpg"
+asteroidSprite.onload = function(){
+
+}
+
 var gameStates = []
 var currentState = 0
-var ship
+var ship                    //if(invincible) {..... do something 
 
 
 function randomRange(high, low){
@@ -33,6 +46,9 @@ function Asteroid(){
         context.closePath();
         context.fill();
         context.restore();
+
+        context.drawImage(shipSprite,-20,-20,40,40);
+        console.log("asteroidSprite drawImage()");
     }
 }
 
@@ -85,15 +101,19 @@ function PlayerShip(){
             context.fill();
             context.restore();
         }
-        context.beginPath();
-        
-        context.fillStyle = "green";
+        /*context.beginPath();*/
+        context.fillStyle = "red";
+        /*context.fillStyle = "green";
         context.moveTo(0, -13);
         context.lineTo(10, 10);
         context.lineTo(-10, 10);
         context.lineTo(0, -13);
         context.closePath();
         context.fill();
+        context.restore()*/
+       
+        context.drawImage(shipSprite,-20,-20,40,40);
+        console.log("shipSprite drawImage()");
 
         context.restore();
     }
