@@ -2,7 +2,7 @@
 #container{
     background-color:red;
     width:900px;
-    height:760px;
+    height:775px;
     margin:auto;
     padding:2px;
     color:blue;
@@ -23,7 +23,8 @@
     
      padding:2px;
      text-align:center;
-     font-family: 'Corinthia', cursive;
+     font-family: 'Permanent Marker', cursive;
+     
   
  }
   
@@ -31,7 +32,7 @@
     
      padding:5px;
      margin-top:10px;
-     font-family: 'Corinthia', cursive;
+     font-family: 'Permanent Marker', cursive;
      text-align:center;
  }
   
@@ -44,16 +45,9 @@
     
  }
   
- #canvas{
-     border: 2px solid blue;
+ canvas{
+     border: 5px solid blue;
+     margin-left: 30px;
  }	
 
 
-/*#body {
-    font-family: 'Corinthia', cursive;
-}
-
-#container {
-    color:blue;
-}
-*/

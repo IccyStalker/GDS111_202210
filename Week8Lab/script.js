@@ -14,25 +14,25 @@ var currentState= 0
 var ship
 
 var shipSprite = new Image()
-shipSprite.src = "images/ghostface1.jpg"
+shipSprite.src = "images/gh.png"
 shipSprite.onload = function (){
 
 }
 
 var asteroidSprite = new Image()
-asteroidSprite.src = "images/jasonV (1).jpg"
+asteroidSprite.src = "images/jasonVV.png"
 asteroidSprite.onload = function(){
 
 }
 
 var gStart = new Image()
-gStart.src = "images/game_start.jpg"
+gStart.src = "images/game_start.png"
 gStart.onload = function(){
 
 }
 
 var gOver = new Image()
-gOver.src = "images/game_over.jpg"
+gOver.src = "images/game_over .png"
 gOver.onload = function() {
 
 }
@@ -231,11 +231,11 @@ function keyPressUp(e){
 gameStates[0] = function(){
     context.save()
     context.drawImage(gStart,0,0,800,600)
-    context.font = "30px 'Corinthia', cursive"
-    context.fillStyle = "white"
+    context.font = "30px 'Permanent Marker', cursive"
+    context.fillStyle = "red"
     context.textAlign = "center"
-    context.fillText("The Avoidance", c.width/2, c.height/2 - 30)
-    context.font = "15px 'Corinthia', cursive;"
+    context.fillText("Slasher Avoidance", c.width/2, c.height/2 - 30)
+    context.font = "15px 'Permanent Marker', cursive"
     context.fillText("Press ENTER to Start!", c.width/2, c.height/2 + 20)
     context.restore()
     
@@ -244,7 +244,7 @@ gameStates[0] = function(){
 gameStates[1] = function(){//GAMEPLAY STATE
     context.save();
     
-    context.font = "15px 'Corinthia', cursive;"
+    context.font = "15px 'Permanent Marker', cursive"
     context.fillStyle = "white"
     context.fillText("Score: " + score.toString(), c.width - 150, 30);
     context.restore();
@@ -308,11 +308,11 @@ gameStates[1] = function(){//GAMEPLAY STATE
 gameStates[2] = function() {//GAME OVER STATE
     context.save()
     context.drawImage(gOver,0,0,800,600)
-    context.font = "30px 'Corinthia', cursive"
-    context.fillStyle = "gold"
+    context.font = "30px 'Permanent Marker', cursive"
+    context.fillStyle = "red"
     context.textAlign = "center"
-    context.fillText("Dio caught you in his time stop!: " + score.toString(), c.width/2, c.height/2 - 30)
-    context.font = "15px 'Corinthia', cursive"
+    context.fillText("The Slashers Caught You!: " + score.toString(), c.width/2, c.height/2 - 30)
+    context.font = "15px 'Permanent Marker', cursive"
     context.fillText("Press ENTER to Play Again!", c.width/2, c.height/2 + 20)
     context.restore()
 
