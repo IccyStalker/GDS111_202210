@@ -255,7 +255,7 @@ gameStates[1] = function(){
             asteroids[i].y = randomRange(canvas.height - asteroids[i].radius, asteroids[i].radius) -  canvas.height
         }
         if(!gameOver){
-            asteroids[i].y += asteroids[i].vy //-----------------y and x ------------------
+            asteroids[i].y += asteroids[i].vy
             asteroids[i].drawAsteroid()
         }
     }

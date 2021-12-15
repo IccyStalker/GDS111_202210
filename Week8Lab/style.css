@@ -1,8 +1,59 @@
 
-#body {
+#container{
+    background-color:red;
+    width:900px;
+    height:760px;
+    margin:auto;
+    padding:2px;
+    color:blue;
+ }
+  
+ #game{
+     width:800px;
+     height:600px;
+     margin:auto;
+     padding:2px;
+ }
+  
+ body{
+     margin:auto;
+ }
+  
+ #header{
+    
+     padding:2px;
+     text-align:center;
+     font-family: 'Corinthia', cursive;
+  
+ }
+  
+ #footer{
+    
+     padding:5px;
+     margin-top:10px;
+     font-family: 'Corinthia', cursive;
+     text-align:center;
+ }
+  
+ body{
+     background-image:url(images/jvd.png);
+     width:fit-content;
+     height:auto;
+     background-repeat:no-repeat;
+    
+    
+ }
+  
+ #canvas{
+     border: 2px solid blue;
+ }	
+
+
+/*#body {
     font-family: 'Corinthia', cursive;
 }
 
 #container {
     color:blue;
 }
+*/

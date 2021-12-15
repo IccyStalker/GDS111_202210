@@ -1,29 +1,41 @@
 var c = document.querySelector('canvas');
 var context = c.getContext("2d");
-var timer = requestAnimationFrame(main);
-var gravity = 1;
+var timer = requestAnimationFrame(main)
+var gravity = 1
 var asteroids = new Array();
-var numAsteroids = 10;
-var gameOver = true;
-var score = 0;
+var numAsteroids = 10
+var gameOver = true
+var score = 0
+
+
+
+var gameStates= []
+var currentState= 0
+var ship
 
 var shipSprite = new Image()
-shipSprite.src = "images/gh.jpg" 
-shipSprite.onload = function(){
-
+shipSprite.src = "images/ghostface1.jpg"
+shipSprite.onload = function (){
 
 }
 
 var asteroidSprite = new Image()
-asteroidSprite.src = "images/gh.jpg"
+asteroidSprite.src = "images/jasonV (1).jpg"
 asteroidSprite.onload = function(){
 
 }
 
-var gameStates = []
-var currentState = 0
-var ship                    //if(invincible) {..... do something 
+var gStart = new Image()
+gStart.src = "images/game_start.jpg"
+gStart.onload = function(){
 
+}
+
+var gOver = new Image()
+gOver.src = "images/game_over.jpg"
+gOver.onload = function() {
+
+}
 
 function randomRange(high, low){
     return Math.random() * (high-low) + low;
@@ -31,36 +43,40 @@ function randomRange(high, low){
 
 //Class for the Asteroids
 function Asteroid(){
-    this.radius = randomRange(10,2);
-    this.x = randomRange(c.width - this.radius, 0 + this.radius);
-    this.y = randomRange(c.height - this.radius, 0 + this.radius) - c.height;
-    this.vx = randomRange(-5, -10);
-    this.vy = randomRange(10,5);
+    this.radius = randomRange(40,10);
+    this.x = randomRange(c.width - this.radius, 0 + this.radius) + c.width
+    this.y = randomRange(c.height - this.radius, 0 + this.radius) //-c.height
+    this.vx = randomRange(-8, -15)
+    this.vy = randomRange(15,8)
     this.color = "red";
 
     this.draw = function(){
+      
         context.save();
         context.beginPath();
         context.fillStyle = this.color;
-        context.arc(this.x,this.y,this.radius,0,2*Math.PI,true);
+        /*context.arc(this.x,this.y,this.radius,0,2*Math.PI,true);*/
+        context.drawImage(asteroidSprite, this.x - this.radius, this.y - this.radius, this.radius*2, this.radius*2)
         context.closePath();
         context.fill();
         context.restore();
-
-        context.drawImage(shipSprite,-20,-20,40,40);
-        console.log("asteroidSprite drawImage()");
     }
 }
 
-function  gameStart() {
- //for loop to create the intances of the asteroids
- for(var i = 0; i<numAsteroids; i++){
-    asteroids[i] = new Asteroid();
 
-    //create the instance  of the ship for the game
-    ship = new PlayerShip()
- }
-}//gameStart() CLOSE
+
+
+
+function gameStart(){
+    //for loop to create the intances of the asteroids
+    for(var i = 0; i<numAsteroids; i++){
+        asteroids[i] = new Asteroid(); //creates loop
+        
+        //create the instance of the ship for the game
+        ship = new PlayerShip()
+    }
+
+}
 
 //Class for the player ship
 function PlayerShip(){
@@ -75,13 +91,11 @@ function PlayerShip(){
     this.left = false;
     this.right = false;
     this.flamelength = 30;
-    
-    
 
     this.draw = function(){
         context.save();
         context.translate(this.x, this.y);
-        //this draws the flame behind the ship
+        //this drws the flame behind the ship
         if(this.up == true){
             context.save();
             //adjust the flame length for a flicker effect
@@ -91,7 +105,7 @@ function PlayerShip(){
             else{
                 this.flamelength = 30;
             }
-            context.fillStyle = "red";
+            context.fillStyle = "green";
             context.beginPath();
             context.moveTo(0, this.flamelength);
             context.lineTo(5, 5);
@@ -101,21 +115,20 @@ function PlayerShip(){
             context.fill();
             context.restore();
         }
-        /*context.beginPath();*/
+        context.drawImage(shipSprite, -20,-20,80,50)
+        console.log("shipSprite drawImage")
+        context.restore()
+        /*context.beginPath();
+        
         context.fillStyle = "red";
-        /*context.fillStyle = "green";
         context.moveTo(0, -13);
         context.lineTo(10, 10);
         context.lineTo(-10, 10);
         context.lineTo(0, -13);
         context.closePath();
         context.fill();
-        context.restore()*/
-       
-        context.drawImage(shipSprite,-20,-20,40,40);
-        console.log("shipSprite drawImage()");
 
-        context.restore();
+        context.restore();*/
     }
 
     this.move = function(){
@@ -152,168 +165,166 @@ document.addEventListener('keydown', keyPressDown);
 document.addEventListener('keyup', keyPressUp);
 
 function keyPressDown(e){
+    console.log("key press down()")
     //console.log("Key Down " + e.keyCode);
-
-  if(gameOver == false) {
-  
-    if(e.keyCode === 38){
-        ship.up = true;
-    }
-    if(e.keyCode === 37){
-        ship.left = true;
-    }
-    if(e.keyCode === 39){
-        ship.right = true;
-    }
- } 
-  if(gameOver == true) {
-
-    if(e.keyCode === 13) {
-
-        if(currentState == 2) {
-            score = 0
-            numAsteroids = 10
-            asteroids = []
-            gameStart()
-
-            currentState = 0 
+    
+    if(gameOver == false){
+        if(e.keyCode === 38){
+            ship.up = true;
         }
+        if(e.keyCode === 40){
+            ship.left = true;
+        }
+        if(e.keyCode === 39){
+            ship.right = true;
+        }
+        
+    }
 
-        else {
+    //WHEN GAME IS "OVER"
+    if(gameOver == true) {
+        console.log("gameOver === true")
+      
+        if(e.keyCode === 13){//enter key!
+            console.log("recog enter key")
+            console.log("current state", currentState)
+        
+            if(currentState == 2) {
+                console.log("current state is 2")
+                score = 0
+                numAsteroids = 10
+                asteroids = []
+                gameStart()
 
-            gameStart()
-            gameOver = false
-            currentState = 1
-            setTimeout(scoreTimer, 1000)
+                currentState = 0
+            }
+
+            else{
+
+                gameStart()
+                gameOver = false
+               
+                currentState = 1
+                setTimeout(scoreTimer, 1000)
+            }
         }
     }
-}
-
-
-
 }
 
 function keyPressUp(e){
+    
     //console.log("Key Up " + e.keyCode);
     if(e.keyCode === 38){
         ship.up = false;
     }
-    if(e.keyCode === 37){
+    if(e.keyCode === 40){
         ship.left = false;
     }
     if(e.keyCode === 39){
         ship.right = false;
     }
+    
 }
 
-//GAME STATES FOR START MENUE GAMEPLAY AnD GAME OVER
+//GAME STATES for START MENU, GAMEPLAY, and GAME OVER
 
-gameStates[0] = function() {
+gameStates[0] = function(){
     context.save()
-    context.font = "30px Arial"
-    context.fillStyle = "red"
-    context.textAlign = "center"
-    context.fillText("Asteroid Avoidance", c.width/2, c.height/2 - 30)
-    context.font = "15px Arial"
-    context.fillText("Press ENTER to Start!", c.width/2, c.width/2 + 30)
-    context.restore()
-
-}
-
-gameStates[1] = function() {//GAMEPLAY STATE
-//display score
-context.save();
-
-context.font = "15px Arial" //make your own later!
-context.fillStyle = "white"
-context.fillText("score: " + score.toString(), c.width - 150, 30); 
-context.restore()
-
- //ship.vy += gravity;
-
- if(ship.up == true){
-    ship.vy = -10;
-}
-else{
-    ship.vy = 3;
-}
-
-if(ship.left == true){
-    ship.vx = -3;
-}
-else if(ship.right == true){
-    ship.vx = 3;
-}
-else{
-    ship.vx = 0;
-}
-
-for(var i = 0; i < asteroids.length; i++) {
-   //using the distance formula to find distance between ship and asteroids - needed for collision
-   var dX = ship.x - asteroids[i].x
-   var dY = ship.y - asteroids[i].y
-   var dist = Math.sqrt((dX*dX) + (dY*dY))
-
-   //check for collision and if so end game
-   if(detectCollision(dist, (ship.h/2 + asteroids[i].radius))) {
-       //console.log(secret stuff for W9D2)
-       gameOver = true
-       currentState = 2
-       //document.removeEventListener("keydown", keyPressDown)
-       //document.removeEventListener("keyup", keyPressUp)
-   }
-
-   //checks to see if asteroid is offscreen
-   if(asteroids[i].y > c.height + asteroids[i].radius) {
-       //reset asteroids position off screen
-       asteroids[i].y = randomRange(c.height - asteroids[i].radius,  0 + asteroids[i].radius)-c.height;
-       asteroids[i].x = randomRange(c.width - asteroids[i].radius, 0 + asteroids[i].radius);
-   }
-
-   if(gameOver == false) {
-       asteroids[i].y += asteroids[i].vy;
-   }
-   asteroids[i].draw();
-}
-
-
-
-   ship.draw()
-   if(gameOver == false) {
-       ship.move()
-   }
-
-   while(asteroids.length < numAsteroids) {
-       //add a new asteroid to the array!
-       asteroids.push(new Asteroid())
-   }
-}
-
-gameStates[2] = function() {
-    context.save()
-    context.font = "30px Arial"
+    context.drawImage(gStart,0,0,800,600)
+    context.font = "30px 'Corinthia', cursive"
     context.fillStyle = "white"
     context.textAlign = "center"
-    context.fillText("GAME OVER Your score was: " + score.toString(), c.width/2, c.height/2 - 30)
-    context.font = "15px Arial"
-    context.fillText("Press ENTER to Start!", c.width/2, c.height/2 + 30)
+    context.fillText("The Avoidance", c.width/2, c.height/2 - 30)
+    context.font = "15px 'Corinthia', cursive;"
+    context.fillText("Press ENTER to Start!", c.width/2, c.height/2 + 20)
     context.restore()
+    
 }
+
+gameStates[1] = function(){//GAMEPLAY STATE
+    context.save();
     
+    context.font = "15px 'Corinthia', cursive;"
+    context.fillStyle = "white"
+    context.fillText("Score: " + score.toString(), c.width - 150, 30);
+    context.restore();
 
-    
+    //ship.vy += gravity;
 
+    if(ship.up == true){
+        ship.vy = -5;
+    }
+    else{
+        ship.vy = 0;
+    }
 
+    if(ship.left == true){
+        ship.vy = 5;
+    }
+    else if(ship.right == true){
+        ship.vx = 5;
+    }
+    else{
+        ship.vx = -4;
+    }
+
+    for(var i = 0; i<asteroids.length; i++){
+        //using the distance formula to find distance between ship and asteroid
+        var dX = ship.x - asteroids[i].x;
+        var dY = ship.y - asteroids[i].y;
+        var dist = Math.sqrt((dX*dX)+(dY*dY));
+        
+        //checks for collision with asteroid and ends game
+        if(detectCollision(dist, (ship.h/2 + asteroids[i].radius))){
+           // console.log("We collided with Asteroid " + i);
+            gameOver = true
+            currentState = 2 //this replaces removeEventListener need
+            //document.removeEventListener('keydown', keyPressDown);
+            //document.removeEventListener('keyup', keyPressUp);
+        }
+
+        //checks to see if asteroid ios off screen
+        if(asteroids[i].y > c.height + asteroids[i].radius){
+            //reset steroids position off screen 
+            asteroids[i].y = randomRange(c.height - asteroids[i].radius, 0 + asteroids[i].radius)-c.height;
+            asteroids[i].x = randomRange(c.width - asteroids[i].radius, 0 + asteroids[i].radius);
+        }
+        if(gameOver == false){
+            asteroids[i].x += asteroids[i].vx;
+        }
+        asteroids[i].draw();
+    }
+
+    ship.draw();
+    if(gameOver == false){
+      ship.move();  
+    }
+    while(asteroids.length < numAsteroids){
+        asteroids.push(new Asteroid());
+    }
+
+}
+
+gameStates[2] = function() {//GAME OVER STATE
+    context.save()
+    context.drawImage(gOver,0,0,800,600)
+    context.font = "30px 'Corinthia', cursive"
+    context.fillStyle = "gold"
+    context.textAlign = "center"
+    context.fillText("Dio caught you in his time stop!: " + score.toString(), c.width/2, c.height/2 - 30)
+    context.font = "15px 'Corinthia', cursive"
+    context.fillText("Press ENTER to Play Again!", c.width/2, c.height/2 + 20)
+    context.restore()
+
+}
 
 
 function main(){
     context.clearRect(0,0, c.width, c.height);
 
-    /*
-      where original gameplay code was
-
-    */
-   gameStates[currentState]() //allows screen to follow the appropriate state
+    //display score
+   
+    gameStates[currentState]() //allows screen to follow the appropriate state
 
     timer = requestAnimationFrame(main);
 }
@@ -322,16 +333,18 @@ function scoreTimer(){
     if(gameOver == false){
         score++;
         //console.log(score);
-        if(score % 5 == 0){
-            numAsteroids += 5;
+        if(score % 2 == 0){
+            numAsteroids += 10;
             console.log(numAsteroids);
         }
 
         setTimeout(scoreTimer,1000);
     }
 }
-//scoreTimer();
+//scoreTimer()
 
 function detectCollision(distance, calcDistance){
     return distance < calcDistance;
 }
+
+
