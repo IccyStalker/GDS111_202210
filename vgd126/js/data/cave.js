@@ -21,7 +21,7 @@ var caveData ={
 				fps:5,
 				cycle:false,
 				frames:[
-					{width:16, height:16, startX:0, startY:0}
+					{width:130, height:130, startX:0, startY:0}
 				]
 			},
 			{

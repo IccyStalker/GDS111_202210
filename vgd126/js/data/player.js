@@ -19,7 +19,7 @@ Properties:
 
 var playerData ={
 	info:{
-		src:`images/valx.png`
+		src:`images/valx2.png`
 	},
 	states:{
 		//The idle animation 
@@ -29,11 +29,11 @@ var playerData ={
 			cycle:true,
 			frames:
 			[
-				{width:512, height:512, startX:1, startY:1},
-				{width:512, height:512, startX:515, startY:1},
-				{width:512, height:512, startX:1029, startY:1},
-				{width:512, height:512, startX:1543, startY:1},
-				{width:512, height:512, startX:1, startY:515},
+				{width:214, height:271, startX:0*214, startY:0},
+				{width:512, height:271, startX:1*214, startY:0},
+				{width:512, height:271, startX:2*214, startY:0},
+				{width:512, height:271, startX:1543, startY:0},
+				{width:512, height:271, startX:1, startY:0},
 				
 			]
 		},
