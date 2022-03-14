@@ -13,7 +13,7 @@ var caveData ={
 			
 			
 		],
-		src:`images/cave.png`,
+		src:`images/Cave tilemap.png`,
 	},
 	states:
 	[		
