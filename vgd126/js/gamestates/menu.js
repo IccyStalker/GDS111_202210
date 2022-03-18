@@ -6,7 +6,7 @@ var startButton = new GameObject({width:128, hieght:128}).makeSprite(buttonData)
 
 
 var menuBackground = new GameObject();
-menuBackground.img.src = "images/mrt.jpg"
+menuBackground.img.src = "images/menu-background.png"
 menuBackground.width=canvas.width
 menuBackground.height=canvas.height
 

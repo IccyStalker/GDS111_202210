@@ -19,7 +19,7 @@ Properties:
 
 var playerData ={
 	info:{
-		src:`images/valx2.png`
+		src:`images/valx2.png` 
 	},
 	states:{
 		//The idle animation 
@@ -29,11 +29,11 @@ var playerData ={
 			cycle:true,
 			frames:
 			[
-				{width:214, height:271, startX:0*214, startY:0},
-				{width:512, height:271, startX:1*214, startY:0},
-				{width:512, height:271, startX:2*214, startY:0},
-				{width:512, height:271, startX:1543, startY:0},
-				{width:512, height:271, startX:1, startY:0},
+				{width:214, height:278, startX:0, startY:0},
+				{width:214, height:278, startX:214, startY:0},
+				{width:214, height:278, startX:642, startY:0},
+				{width:214, height:278, startX:856, startY:0},
+				//{width:214, height:278, startX:1070, startY:0}
 				
 			]
 		},
@@ -44,12 +44,11 @@ var playerData ={
 			cycle:true,
 			frames:
 			[
-				{width:512, height:512, startX:515, startY:515},
-				{width:512, height:512, startX:1029, startY:515},
-				{width:512, height:512, startX:1543, startY:515},
-				{width:512, height:512, startX:1, startY:1029},
-				{width:512, height:512, startX:515, startY:1029},
-				{width:512, height:512, startX:1029, startY:1029}
+				{width:214, height:278, startX:1284, startY:0},
+				{width:214, height:278, startX:1498, startY:0},
+				{width:214, height:278, startX:1712, startY:0},
+				{width:214, height:278, startX:1926, startY:0},
+				{width:214, height:278, startX:2140, startY:0}
 			]
 		},
 		//The jump animation 
@@ -59,7 +58,7 @@ var playerData ={
 			cycle:false,
 			frames:
 			[
-				{width:512, height:512, startX:1543, startY:1029}
+				{width:214, height:278, startX:2354, startY:0}
 			]
 		},
 		//The crouch animation 
@@ -69,7 +68,7 @@ var playerData ={
 			cycle:true,
 			frames:
 			[
-				{width:128, height:128, startX:1, startY:1543}
+				{width:214, height:278, startX:2354, startY:0},
 				
 			]
 		},
@@ -81,12 +80,13 @@ var playerData ={
 			//width:300,
 			frames:
 			[
-				{width:128, height:128, startX:515, startY:1543},
-				{width:128, height:128, startX:1029, startY:1543},
-				{width:128, height:128, startX:1543, startY:1543},
-				{width:128, height:128, startX:2057, startY:1},
-				//{width:128, height:128, startX:1, startY:515}
-				
+				{width:214, height:278, startX:2568, startY:0},
+				{width:214, height:278, startX:2782, startY:0},
+				{width:214, height:278, startX:2996, startY:0},
+				{width:214, height:278, startX:3210, startY:0},
+				{width:214, height:278, startX:3424, startY:0},
+				{width:214, height:278, startX:3638, startY:0},
+				{width:214, height:278, startX:3852, startY:0}
 				
 			]
 		}
