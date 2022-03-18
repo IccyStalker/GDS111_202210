@@ -2,11 +2,11 @@
 This file contains all of the code for the Main Menu
 ----------------------------------*/
 
-var startButton = new GameObject({width:128, hieght:128}).makeSprite(buttonData) 
+var startButton = new GameObject({width:128, height:64,y:canvas.height/2+64}).makeSprite(buttonData) 
 
 
 var menuBackground = new GameObject();
-menuBackground.img.src = "images/menu-background.png"
+menuBackground.img.src = "images/Menu-background.png"
 menuBackground.width=canvas.width
 menuBackground.height=canvas.height
 
@@ -19,6 +19,8 @@ gameStates[`menu`] =function(){
 		{
 			//Changes to the game state
 			gameStates.changeState(`level1`)
+			sounds.doom.play()
+			sounds.doom.loop = true
 		}
 
 		//Hover Effect Graffic
