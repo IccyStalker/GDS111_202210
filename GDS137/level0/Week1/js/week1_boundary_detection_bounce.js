@@ -28,11 +28,34 @@ function animate()
 	
 	//--------------Bounce of Right----------------------
 	if(player.x > canvas.width - player.width/2)
-	{
-		player.x = 0 - player.width/2
-		player.vx = + player.vx;	
-	}
-	//---------------------------------------------------
+    {
+        player.x = canvas.width - player.width/2;
+        player.vx = -player.vx;
+    }
+   
+   // if(player.x < 0 + player.width/2)
+    {
+        player.x = 0 + player.width/2;
+        player.vx = -player.vx;
+    }
+    
+
+    //if(player.y < 0 + player.height/2)
+    {
+        player.y = 0 + player.height/2;
+        player.vy = -player.vy;
+    }
+    
+
+    
+   // if(player.y > canvas.height - player.height/2)
+    {
+        player.y = canvas.height - player.height/2;
+        player.vy = -player.vy;
+    }
+    
+
+	
 	
 	player.draw();
 }
