@@ -8,7 +8,7 @@ var player;
 
 	canvas = document.getElementById("canvas");
 	context = canvas.getContext("2d");	
-	player = new Player();
+	player = new Ball();
 	
 	//------Declare the Player's speed on the x and y axis------
 	player.vx = 2;
@@ -33,14 +33,14 @@ function animate()
         player.vx = -player.vx;
     }
    
-   // if(player.x < 0 + player.width/2)
+    if(player.x < 0 + player.width/2)
     {
         player.x = 0 + player.width/2;
         player.vx = -player.vx;
     }
     
 
-    //if(player.y < 0 + player.height/2)
+    if(player.y < 0 + player.height/2)
     {
         player.y = 0 + player.height/2;
         player.vy = -player.vy;
@@ -48,7 +48,7 @@ function animate()
     
 
     
-   // if(player.y > canvas.height - player.height/2)
+    if(player.y > canvas.height - player.height/2)
     {
         player.y = canvas.height - player.height/2;
         player.vy = -player.vy;
@@ -57,5 +57,5 @@ function animate()
 
 	
 	
-	player.draw();
+	player.drawCircle();
 }
