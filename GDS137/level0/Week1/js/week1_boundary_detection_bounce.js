@@ -11,7 +11,7 @@ var player;
 	player = new Ball();
 	
 	//------Declare the Player's speed on the x and y axis------
-	player.vx = 2;
+	player.vx = 6;
 	player.vy = 0;
 	//----------------------------------------------------
 	
