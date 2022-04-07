@@ -49,7 +49,30 @@ function animate()
 		console.log("moving down");
 		player.y += 2;
 	} 
-	
+
+	if(player.y < 0 + player.height/2)
+    {
+        player.y = 0 + player.height/2;
+        
+       
+	}
+
+	if(player.y > canvas.height - player.height/2)
+    {
+        player.y = canvas.height - player.height/2;
+       
+
+    }
+
+	/*if(player.hitTestObject(ball))
+	{
+		player.x = 80;
+		console.log("colliding");
+		player.x = player.x - player.width/2 - player.width/2
+		player.y = player.x - player.width/2 - player.width/2 
+	} */
+
+
 	//Update the Screen
 	player.drawRect();
 }
