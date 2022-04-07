@@ -12,7 +12,7 @@ var player;
 	
 	//------Declare the Player's speed on the x and y axis------
 	player.vx = 6;
-	player.vy = 0;
+	player.vy = 6;
 	//----------------------------------------------------
 	
 	timer = setInterval(animate, interval);
@@ -24,6 +24,8 @@ function animate()
 	
 	//----Movement Using the Player's move() function----
 	player.move();
+
+    
 	//---------------------------------------------------
 	
 	//--------------Bounce of Right----------------------
@@ -43,7 +45,7 @@ function animate()
     if(player.y < 0 + player.height/2)
     {
         player.y = 0 + player.height/2;
-        player.vy = -player.vy;
+        player.vy = 1 -player.vy;
     }
     
 
