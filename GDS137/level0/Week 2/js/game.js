@@ -13,6 +13,12 @@ var player;
 	
 	//Instantiate the Player
 	player = new GameObject();
+	player.x = 60;
+	player.y = 337;
+	player.width = 15;
+	player.hieght = 90;
+	player.color = "purple"
+	
 
 	//Set the Animation Timer
 	timer = setInterval(animate, interval);
@@ -23,27 +29,7 @@ function animate()
 	context.clearRect(0,0,canvas.width, canvas.height);	
 	
 	
-	//Move the Player to the right
-	if(d)
-	{
-		console.log("Moving Right");
-		player.x += 2;
-	}
-	if(a)
-	{
-		console.log("Moving Left");
-		player.x += -2;
-	}
-   /* if(w)
-	{
-		console.log("moving up");
-		player.y += 2;
-	}
-	if(s)
-	{
-		console.log("moving down");
-		player.y += -2;
-	} */
+
 	
 	//Update the Screen
 	player.drawRect();
