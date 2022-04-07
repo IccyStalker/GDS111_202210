@@ -20,6 +20,7 @@ var player;
 	player.color = "purple"
 	ball = new GameObject();
 	
+	
 	//------Declare the ball's speed on the x and y axis------
 	ball.vx = 6;
 	ball.vy = 2;
@@ -79,7 +80,7 @@ function animate()
     {
         ball.x = canvas.width - ball.width/2;
         ball.vx = -ball.vx;
-        ball.color = "red"
+        
 
     }
    
@@ -87,7 +88,7 @@ function animate()
     {
         ball.x = 0 + ball.width/2;
         ball.vx = -ball.vx;
-        ball.color = "blue"
+      
     }
     
 
@@ -95,7 +96,7 @@ function animate()
     {
         ball.y = 0 + ball.height/2;
         ball.vy = -ball.vy;
-        ball.color = "purple"
+       
 
         
         
@@ -107,7 +108,7 @@ function animate()
     {
         ball.y = canvas.height - ball.height/2;
         ball.vy = -ball.vy;
-        ball.color = "black"
+        
     }
     
 
