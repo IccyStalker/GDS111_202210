@@ -18,6 +18,11 @@ var player;
 	player.width = 15;
 	player.hieght = 90;
 	player.color = "purple"
+	ball = new GameObject();
+	
+	//------Declare the ball's speed on the x and y axis------
+	ball.vx = 6;
+	ball.vy = 2;
 	
 
 	//Set the Animation Timer
@@ -64,6 +69,54 @@ function animate()
 
     }
 
+	ball.move();
+
+    
+	//---------------------------------------------------
+	
+	//--------------Bounce of Right----------------------
+	if(ball.x > canvas.width - ball.width/2)
+    {
+        ball.x = canvas.width - ball.width/2;
+        ball.vx = -ball.vx;
+        ball.color = "red"
+
+    }
+   
+    if(ball.x < 0 + ball.width/2)
+    {
+        ball.x = 0 + ball.width/2;
+        ball.vx = -ball.vx;
+        ball.color = "blue"
+    }
+    
+
+    if(ball.y < 0 + ball.height/2)
+    {
+        ball.y = 0 + ball.height/2;
+        ball.vy = -ball.vy;
+        ball.color = "purple"
+
+        
+        
+    }
+    
+
+    
+    if(ball.y > canvas.height - ball.height/2)
+    {
+        ball.y = canvas.height - ball.height/2;
+        ball.vy = -ball.vy;
+        ball.color = "black"
+    }
+    
+
+	
+	
+	ball.drawCircle();
+
+	
+
 	/*if(player.hitTestObject(ball))
 	{
 		player.x = 80;
@@ -76,4 +129,8 @@ function animate()
 	//Update the Screen
 	player.drawRect();
 }
+
+
+
+
 

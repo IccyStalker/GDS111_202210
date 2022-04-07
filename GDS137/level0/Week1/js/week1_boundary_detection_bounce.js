@@ -10,7 +10,7 @@ var player;
 	context = canvas.getContext("2d");	
 	player = new Ball();
 	
-	//------Declare the Player's speed on the x and y axis------
+	//------Declare the player's speed on the x and y axis------
 	player.vx = 6;
 	player.vy = 2;
 	//----------------------------------------------------
@@ -22,7 +22,7 @@ function animate()
 {
 	context.clearRect(0,0,canvas.width, canvas.height);	
 	
-	//----Movement Using the Player's move() function----
+	//----Movement Using the player's move() function----
 	player.move();
 
     
