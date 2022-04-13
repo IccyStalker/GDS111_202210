@@ -19,11 +19,13 @@ var player;
 	player.hieght = 90;
 	player.color = "purple"
 	ball = new GameObject();
+	ball.width = 25
+	ball.height = 25
 	
 	
 	//------Declare the ball's speed on the x and y axis------
-	ball.vx = 6;
-	ball.vy = 2;
+	ball.vx = -6;
+	ball.vy = 0;
 	
 
 	//Set the Animation Timer
@@ -68,7 +70,16 @@ function animate()
         player.y = canvas.height - player.height/2;
        
 
-    }
+    } 
+
+	if(player.x < 0 + player.width/2)
+    {
+        player.x = 0 + player.width/2;
+        player.vx = -player.vx;
+      
+    } 
+
+
 
 	ball.move();
 
@@ -89,7 +100,7 @@ function animate()
         ball.x = 0 + ball.width/2;
         ball.vx = -ball.vx;
       
-    }
+    } 
     
 
     if(ball.y < 0 + ball.height/2)
@@ -118,13 +129,10 @@ function animate()
 
 	
 
-	/*if(player.hitTestObject(ball))
+	if(player.hitTestObject(ball))
 	{
-		player.x = 80;
-		console.log("colliding");
-		player.x = player.x - player.width/2 - player.width/2
-		player.y = player.x - player.width/2 - player.width/2 
-	} */
+		 
+	} 
 
 
 	//Update the Screen
