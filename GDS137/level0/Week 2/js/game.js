@@ -14,7 +14,7 @@ var player;
 	//Instantiate the Player
 	player = new GameObject();
 	player.x = 0;
-	player.y = 337;
+	player.y = 380;
 	player.width = 15;
 	player.hieght = 90;
 	player.color = "purple"
@@ -26,6 +26,7 @@ var player;
 	//------Declare the ball's speed on the x and y axis------
 	ball.vx = -6;
 	ball.vy = 0;
+	
 	
 
 	//Set the Animation Timer
@@ -39,7 +40,7 @@ function animate()
 	if(d)
 	{
 		console.log("Moving Right");
-		player.x += 2;
+		player.x += 0;
 	}
 	if(a)
 	{
@@ -49,13 +50,13 @@ function animate()
     if(w)
 	{
 		console.log("moving up");
-		player.y += -2;
+		player.y += -6;
 	}
 	
 	if(s)
 	{
 		console.log("moving down");
-		player.y += 2;
+		player.y += 6;
 	} 
 
 	if(player.y < 0 + player.height/2)
@@ -95,12 +96,12 @@ function animate()
 
     }
    
-    if(ball.x < 0 + ball.width/2)
+   /* if(ball.x < 0 + ball.width/2)
     {
         ball.x = 0 + ball.width/2;
         ball.vx = -ball.vx;
       
-    } 
+    }  */
     
 
     if(ball.y < 0 + ball.height/2)
@@ -131,7 +132,10 @@ function animate()
 
 	if(player.hitTestObject(ball))
 	{
-		 
+		ball.vx = -ball.vx;
+		
+		
+	
 	} 
 
 
