@@ -36,7 +36,8 @@ var player;
 function animate()
 {
 	//Erase the Screen
-	context.clearRect(0,0,canvas.width, canvas.height);	
+	context.clearRect(0,0,canvas.width, canvas.height);
+	
 
 	if(d)
 	{
@@ -97,12 +98,12 @@ function animate()
 
     }
    
-    if(ball.x < 6 + ball.width/2)
+    if(ball.x < 0 + ball.width/2)
     {
-        ball.x = ball.y 
-		 
-      
-    }  
+        ball.x = 0 + ball.width/2;
+        ball.vx = -ball.vx;
+        
+    }
     
 
     if(ball.y < 0 + ball.height/2)
@@ -124,6 +125,13 @@ function animate()
         
     }
     
+	if(ball.detectCollision) 
+	{
+		
+		ball.vx = 25
+		ball.vy = 25
+	
+	}
 
 	
 	
@@ -134,12 +142,20 @@ function animate()
 	if(player.hitTestObject(ball))
 	{
 		ball.vx = -ball.vx;
-		
-		
+		ball.x = player.x + player.width/2 + ball.width/2
 	
+		if(ball.y < player.y - player.height/6)
+		{
+		ball.vy = -6
+
+		}
+	    if(ball.y > player.y + player.height/6) {
+
+			ball.vy = 6
+		}
+	
+
 	} 
-
-
 	//Update the Screen
 	player.drawRect();
 }
