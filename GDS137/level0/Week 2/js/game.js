@@ -23,6 +23,7 @@ var player;
 	ball.height = 25
 	
 	
+	
 	//------Declare the ball's speed on the x and y axis------
 	ball.vx = -6;
 	ball.vy = 0;
@@ -96,12 +97,12 @@ function animate()
 
     }
    
-   /* if(ball.x < 0 + ball.width/2)
+    if(ball.x < 6 + ball.width/2)
     {
-        ball.x = 0 + ball.width/2;
-        ball.vx = -ball.vx;
+        ball.x = ball.y 
+		 
       
-    }  */
+    }  
     
 
     if(ball.y < 0 + ball.height/2)
